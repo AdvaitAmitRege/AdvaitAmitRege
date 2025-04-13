@@ -1,0 +1,109 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+import './App.css';
+
+function App() {
+  return (
+    <Router>
+      <div className="bg-black text-white font-sans min-h-screen">
+        <Header />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/game-design" element={<GameDesign />} />
+          <Route path="/programming" element={<Programming />} />
+          <Route path="/additional-skills" element={<AdditionalSkills />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+function Header() {
+  return (
+    <nav className="p-6 flex justify-between items-center border-b border-gray-800">
+      <h1 className="text-2xl font-bold">Advait Rege</h1>
+      <div className="space-x-6">
+        <Link to="/" className="hover:text-cyan-400">Home</Link>
+        <Link to="/game-design" className="hover:text-cyan-400">Game Design</Link>
+        <Link to="/programming" className="hover:text-cyan-400">Programming</Link>
+        <Link to="/additional-skills" className="hover:text-cyan-400">More Skills</Link>
+      </div>
+    </nav>
+  );
+}
+
+function LandingPage() {
+  return (
+    <motion.div className="p-12 text-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      <h2 className="text-5xl font-bold mb-6">Hey, I'm Advait 👋</h2>
+      <p className="text-xl max-w-3xl mx-auto">
+        I’m a passionate <span className="text-cyan-400">game designer</span> and developer based in Bangalore, who crafts immersive experiences, tells gripping stories, and codes to bring ideas to life. This is my world. Step in.
+      </p>
+      <motion.div className="mt-12" whileHover={{ scale: 1.05 }}>
+        <Link to="/game-design" className="bg-cyan-500 hover:bg-cyan-600 text-white py-3 px-6 rounded-2xl shadow-xl transition-all duration-300">
+          Explore My Work →
+        </Link>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+function GameDesign() {
+  return (
+    <motion.div className="p-12" initial={{ x: '-100vw' }} animate={{ x: 0 }}>
+      <h2 className="text-4xl font-bold mb-6">🎮 Game Design</h2>
+      <p className="text-lg mb-4">Here’s where the magic happens. I specialize in:</p>
+      <ul className="list-disc ml-6 space-y-2">
+        <li>Level Design & Worldbuilding</li>
+        <li>Gameplay Mechanics & Balancing</li>
+        <li>Storyboarding & Narrative Design</li>
+        <li>Prototyping in Unity & Unreal Engine</li>
+      </ul>
+      <div className="mt-10">
+        {/* Replace with actual project cards */}
+        <p className="text-gray-400">[Add interactive sliders or video walkthroughs of your projects here]</p>
+      </div>
+    </motion.div>
+  );
+}
+
+function Programming() {
+  return (
+    <motion.div className="p-12" initial={{ y: '100vh' }} animate={{ y: 0 }}>
+      <h2 className="text-4xl font-bold mb-6">💻 Programming</h2>
+      <p className="text-lg mb-4">Beyond design, I breathe code. I’ve built gameplay systems, AI behaviors, and tools using:</p>
+      <ul className="list-disc ml-6 space-y-2">
+        <li>C#, C++, Blueprints (UE), Unity Scripting</li>
+        <li>Custom Tools for Level Editors and Game UI</li>
+        <li>Shader Programming & Optimization</li>
+        <li>Gameplay Systems like Inventory, Combat, Dialogue Trees</li>
+      </ul>
+      <div className="mt-10">
+        <p className="text-gray-400">[Code snippets, GitHub embeds, and real-game footage can go here]</p>
+      </div>
+    </motion.div>
+  );
+}
+
+function AdditionalSkills() {
+  return (
+    <motion.div className="p-12" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      <h2 className="text-4xl font-bold mb-6">🛠️ Additional Skills</h2>
+      <p className="text-lg mb-4">I’m always learning. Here are a few other things in my arsenal:</p>
+      <ul className="list-disc ml-6 space-y-2">
+        <li>3D Modeling in Blender</li>
+        <li>Photoshop & Graphic Design</li>
+        <li>Video Editing (Premiere Pro, After Effects)</li>
+        <li>Content Writing, Narrative Scripting</li>
+        <li>Game Marketing & Pitch Deck Creation</li>
+      </ul>
+      <div className="mt-10">
+        <p className="text-gray-400">[You can show logos, mini portfolios, videos, etc. here]</p>
+      </div>
+    </motion.div>
+  );
+}
+
+export default App;
