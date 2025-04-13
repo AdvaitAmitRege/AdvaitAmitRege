@@ -1,0 +1,130 @@
+/* App.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #00ffd5;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #00ffa2;
+  }
+  
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .nav-link {
+    font-size: 1rem;
+    color: #d1d1d1;
+    padding: 6px 12px;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 6px;
+  }
+  
+  .nav-link:hover {
+    background: #222;
+    color: #00ffd5;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  
+  .highlight {
+    color: #00ffd5;
+    font-weight: 600;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #00ffd5;
+    color: #000;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+    background: #00ffa2;
+  }
+  
+  .section {
+    padding: 60px 40px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #00ffd5;
+  }
+  
+  .section-subtext {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #bbbbbb;
+  }
+  
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 2rem;
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  .bullet-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+  }
+  
+  .placeholder {
+    font-style: italic;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+  
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .intro-text {
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+  
+    .bullet-list li {
+      font-size: 0.95rem;
+    }
+  }
+  
