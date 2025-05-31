@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Advait's Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="lib/aos/aos.css">
+
+  <!-- Fonts & CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="lib/aos/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+
+  <!-- Optional background libraries (to be added later) -->
+  <!-- <script src="js/particle-background.js" defer></script> -->
+  <!-- <script src="js/nebula-background.js" defer></script> -->
 </head>
 <body>
-  <header>
+
+  <!-- 🌀 Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-spinner"></div>
+    <p style="color: #00f2ff; font-family: 'Orbitron', sans-serif;">Loading...</p>
+  </div>
+
+  <!-- 🌌 Animated Background Containers -->
+  <div id="particle-bg"></div>
+  <div id="nebula-bg"></div>
+
+  <!-- 🚀 Header -->
+  <header data-aos="fade-down">
     <nav>
       <div class="logo">🎮 MyPortfolio</div>
       <ul class="nav-links">
@@ -20,28 +39,42 @@
     </nav>
   </header>
 
-  <section class="hero" data-aos="fade-up">
-    <h1>Hello, I'm Advait Rege</h1>
+  <!-- 🔥 Hero Section -->
+  <section class="hero" data-aos="zoom-in">
+    <h1>Hey there, I'm Advait Rege</h1>
     <h2>Game Designer • Programmer • Creative Thinker</h2>
-    <
-    <h3 href="game-design.html" class="btn">Explore My Work</h3>
+    <a href="game-design.html" class="btn">Explore My Work</a>
   </section>
 
-  <section class="about" data-aos="fade-right">
-    <h2><b>About Me</b></h2>
-    <p>Hey there, I am a professional Game Designer with a 
-      passion for Interractive storytelling, Level design 
-      and Crafting immersive gameplay for players to player. 
-      I'm also experience in game programming with languages 
-      such as c++ and C#.</p>
+  <!-- 📖 About Section -->
+  <section class="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+      Hey there, I am a professional Game Designer with a passion for interactive storytelling,
+      level design, and crafting immersive gameplay for players. I'm also experienced in game
+      programming using languages such as C++ and C#. I specialize in technical design—
+      bringing mechanics and systems to life through cross-disciplinary knowledge.
+    </p>
   </section>
 
+  <!-- 🧠 Footer -->
   <footer>
-    <p>© 2025 [Advait Rege] Portfolio</p>
+    <p>© 2025 Advait Rege Portfolio</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="lib/aos/aos.js"></script>
-  <script>AOS.init();</script>
-  <script src="js/script.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- ✅ Hide loading screen after everything is loaded -->
+  <script>
+    window.addEventListener('load', function () {
+      const loader = document.getElementById('loading-screen');
+      if (loader) loader.style.display = 'none';
+    });
+  </script>
+
 </body>
 </html>
