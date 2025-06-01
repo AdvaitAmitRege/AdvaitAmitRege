@@ -522,11 +522,23 @@ footer {
       0 0 16px #00f2ff99,
       0 2px 8px #222;
   }
+<<<<<<< Updated upstream
   50% {
     text-shadow:
       0 0 32px #00f2ffcc,
       0 0 24px #00f2ff,
       0 2px 8px #222;
+=======
+  hat
+  .hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+    text-align: center;
+>>>>>>> Stashed changes
   }
   100% {
     text-shadow:
@@ -1017,7 +1029,7 @@ main > .your-section-class:last-child {
 }
 .project-detail img:hover {
   transform: scale(1.04) rotate(-2deg);
-  box-shadow: 0 8px 32px #00f2ff88, 0 0 24px #ff00f2ff55;
+  box-shadow: 0 8px 32px #00f2ff88, 0 0 24px #ff00ff55;
   border-color: #00f2ffcc;
 }
 
@@ -1126,4 +1138,11 @@ main > .your-section-class:last-child {
 @keyframes bg-move {
   0% { background-position: 60% 40%, 30% 70%; }
   100% { background-position: 65% 45%, 35% 75%; }
+}
+
+/* Fix for .project-detail img:hover typo */
+.project-detail img:hover {
+  transform: scale(1.04) rotate(-2deg);
+  box-shadow: 0 8px 32px #00f2ff88, 0 0 24px #ff00ff55;
+  border-color: #00f2ffcc;
 }
