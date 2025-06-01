@@ -522,23 +522,11 @@ footer {
       0 0 16px #00f2ff99,
       0 2px 8px #222;
   }
-<<<<<<< Updated upstream
   50% {
     text-shadow:
       0 0 32px #00f2ffcc,
       0 0 24px #00f2ff,
       0 2px 8px #222;
-=======
-  hat
-  .hero {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
-    text-align: center;
->>>>>>> Stashed changes
   }
   100% {
     text-shadow:
