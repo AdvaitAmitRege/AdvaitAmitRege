@@ -4,34 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Advait's Portfolio</title>
-
-  <!-- Fonts & CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="lib/aos/aos.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-
-  <!-- Optional background libraries (to be added later) -->
-  <!-- <script src="js/particle-background.js" defer></script> -->
-  <!-- <script src="js/nebula-background.js" defer></script> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="gradient-bg">
+  <div id="particle-bg" aria-hidden="true"></div>
+  <div id="nebula-bg" aria-hidden="true"></div>
 
-  <!-- 🌀 Loading Screen -->
-  <div id="loading-screen">
-    <div class="loading-spinner"></div>
-    <p style="color: #00f2ff; font-family: 'Orbitron', sans-serif;">Loading...</p>
-  </div>
-
-  <!-- 🌌 Animated Background Containers -->
-  <div id="particle-bg"></div>
-  <div id="nebula-bg"></div>
-
-  <!-- 🚀 Header -->
-  <header data-aos="fade-down">
-    <nav>
-      <div class="logo">🎮 MyPortfolio</div>
+  <header>
+    <nav class="navbar">
+      <div class="logo" aria-label="Portfolio Logo" title="Advait's Portfolio">🎮 MyPortfolio</div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="game-design.html">Game Design</a></li>
         <li><a href="programming.html">Programming</a></li>
         <li><a href="additional-skills.html">Other Skills</a></li>
@@ -39,42 +25,164 @@
     </nav>
   </header>
 
-  <!-- 🔥 Hero Section -->
-  <section class="hero" data-aos="zoom-in">
-    <h1>Hey there, I'm Advait Rege</h1>
-    <h2>Game Designer • Programmer • Creative Thinker</h2>
-    <a href="game-design.html" class="btn">Explore My Work</a>
-  </section>
+  <main>
 
-  <!-- 📖 About Section -->
-  <section class="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>
-      Hey there, I am a professional Game Designer with a passion for interactive storytelling,
-      level design, and crafting immersive gameplay for players. I'm also experienced in game
-      programming using languages such as C++ and C#. I specialize in technical design—
-      bringing mechanics and systems to life through cross-disciplinary knowledge.
-    </p>
-  </section>
+    <section class="hero">
+      <h1 id="typewriter-hero"></h1>
+      <h2>Game Designer & Programmer</h2>
+    </section>
+    <section class="about section-reveal from-left">
+      <div class="about-photo">
+        <img src="assets/your-photo.jpg" alt="Advait Rege">
+      </div>
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+          I am a professional Game Designer passionate about interactive storytelling, level design, and crafting immersive gameplay.<br>
+          Experienced in C++ and C#, I specialize in technical design—bringing mechanics and systems to life through cross-disciplinary knowledge.
+        </p>
+      </div>
+    </section>
 
-  <!-- 🧠 Footer -->
+    <!-- Featured Projects Section -->
+    <section class="featured-projects section-reveal">
+      <h2 class="featured-title">Featured Projects</h2>
+      <div class="project-gallery">
+        <a href="project-neon-runner.html" class="project-card">
+          <img src="assets/project1.jpg" alt="Project 1">
+          <div class="project-info">
+            <h3>Neon Runner (2025)</h3>
+            <span>Technical Designer</span>
+            <p>
+              Fast-paced neon-lit platformer with procedural generation and custom tools for designers.
+            </p>
+          </div>
+        </a>
+        <a href="project-ai-arena.html" class="project-card">
+          <img src="assets/project2.jpg" alt="Project 2">
+          <div class="project-info">
+            <h3>AI Arena (2024)</h3>
+            <span>Gameplay Programmer</span>
+            <p>
+              Competitive AI-driven arena game. Built modular systems and advanced debugging tools.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="achievements section-reveal from-left">
+      <h2>Achievements</h2>
+      <ul>
+        <li>🏆 Winner, Indie Game Jam 2024 – Best Technical Design</li>
+        <li>🎖️ Shipped 3 Unity games with 10k+ downloads</li>
+        <li>🛠️ Built custom Unity tools for designers & artists</li>
+        <li>💡 Speaker at GameDevCon 2023: "Bridging Design & Code"</li>
+      </ul>
+    </section>
+
+    <!-- My Backstory Section -->
+    <section class="my-backstory section-reveal from-right">
+      <div class="backstory-timeline">
+        <h2 class="backstory-title">MY BACKSTORY</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Game Designer</h3>
+              <span class="timeline-place">Cremo <small>(2024 – Present)</small></span>
+              <p>
+                Working with the developers of Temtem in a new project from conception to release.<br>
+                <strong>Specialized in:</strong> Combat & AI.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Mid Technical Designer</h3>
+              <span class="timeline-place">Bohemia Interactive <small>(2023 – 2024)</small></span>
+              <p>
+                Worked with the developers of DayZ and Arma.<br>
+                Developed Vigor, a Third-Person Looter Shooter for PS, Xbox One Series S/X, and Nintendo Switch.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Tools Developer</h3>
+              <span class="timeline-place">Freelance <small>(2022 – 2023)</small></span>
+              <p>
+                Built custom Unity/Unreal tools for indie teams.<br>
+                Focused on workflow automation and designer-friendly pipelines.
+              </p>
+            </div>
+          </div>
+          <!-- Add more timeline items as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Categories Section -->
+    <section class="portfolio-categories section-reveal">
+      <h2 class="categories-title">SELECT A CATEGORY</h2>
+      <div class="categories-grid">
+        <a href="game-design.html" class="category-card game-design" style="--delay: 0.1s">
+          <img src="assets/images/game-category.jpg" alt="Game Design">
+          <div class="category-label">Game Design</div>
+        </a>
+        <a href="programming.html" class="category-card programming" style="--delay: 0.25s">
+          <img src="assets/images/programming-category.jpg" alt="Programming">
+          <div class="category-label">Programming</div>
+        </a>
+        <a href="additional-skills.html" class="category-card other-skills" style="--delay: 0.4s">
+          <img src="assets/images/skills-category.jpg" alt="Other Skills">
+          <div class="category-label">Other Skills</div>
+        </a>
+      </div>
+    </section>
+  </main>
   <footer>
+    <div class="footer-social">
+      <a href="https://instagram.com/YOUR_USERNAME" target="_blank" title="Instagram">
+        <img src="assets/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://discord.com/users/YOUR_DISCORD_ID" target="_blank" title="Discord">
+        <img src="assets/discord.svg" alt="Discord">
+      </a>
+      <a href="tel:+911234567890" title="Call">
+        <img src="assets/phone.svg" alt="Phone">
+      </a>
+      <a href="mailto:your@email.com" title="Email">
+        <img src="assets/email.svg" alt="Email">
+      </a>
+    </div>
     <p>© 2025 Advait Rege Portfolio</p>
   </footer>
+  
+  <div class="neon-shape circle"></div>
+  <div class="neon-shape triangle"></div>
 
-  <!-- Scripts -->
-  <script src="lib/aos/aos.js"></script>
+  <script src="js/particle-background.js"></script>
+  <script src="js/nebula-background.js"></script>
+  <script src="js/scroll-reveal.js"></script>
   <script>
-    AOS.init();
-  </script>
-
-  <!-- ✅ Hide loading screen after everything is loaded -->
-  <script>
-    window.addEventListener('load', function () {
-      const loader = document.getElementById('loading-screen');
-      if (loader) loader.style.display = 'none';
-    });
-  </script>
-
+document.addEventListener("DOMContentLoaded", function() {
+  const text = "Hey there, I'm Advait.";
+  const el = document.getElementById("typewriter-hero");
+  let i = 0;
+  function type() {
+    if (i <= text.length) {
+      el.textContent = text.substring(0, i) + (i < text.length ? "|" : "");
+      i++;
+      setTimeout(type, 70);
+    } else {
+      el.textContent = text; // Remove cursor at end
+    }
+  }
+  type();
+});
+</script>
 </body>
 </html>

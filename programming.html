@@ -1,135 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Programming</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="lib/aos/aos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: #0f0f0f;
-      color: #f0f0f0;
-    }
-    header {
-      background: rgba(25, 25, 25, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 20px #00f2ff33;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em 2em;
-    }
-    .logo {
-      font-size: 1.5em;
-      color: #00f2ff;
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5em;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #f0f0f0;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: #00f2ff;
-      left: 0;
-      bottom: -3px;
-      transition: 0.3s ease;
-    }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    .page-title {
-      padding: 3em 2em;
-      background: linear-gradient(135deg, #1a1a1a, #111);
-      text-align: center;
-    }
-    .page-title h1 {
-      font-size: 2.5em;
-      color: #00f2ff;
-      margin-bottom: 0.2em;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2em;
-      padding: 3em;
-    }
-    .project-card {
-      background: #1b1b1b;
-      border-radius: 12px;
-      padding: 1em;
-      box-shadow: 0 0 10px #00f2ff22;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px #00f2ff88;
-    }
-    .project-card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .project-card h3 {
-      color: #00f2ff;
-      margin-top: 0.5em;
-    }
-    footer {
-      text-align: center;
-      padding: 2em;
-      background: #101010;
-      border-top: 1px solid #00f2ff33;
-      color: #888;
-      font-size: 0.9em;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header data-aos="fade-down">
-    <nav>
-      <div class="logo">🎮 MyPortfolio</div>
+<body class="gradient-bg">
+  <div id="particle-bg" aria-hidden="true"></div>
+  <div id="nebula-bg" aria-hidden="true"></div>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo" aria-label="Portfolio Logo" title="Advait's Portfolio">🎮 MyPortfolio</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="game-design.html">Game Design</a></li>
-        <li><a href="programming.html">Programming</a></li>
+        <li><a href="programming.html" aria-current="page">Programming</a></li>
         <li><a href="additional-skills.html">Other Skills</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="page-title" data-aos="fade-in">
-    <h1>Programming Skills</h1>
-    <p>Gameplay systems, tools, scripts, prototypes.</p>
-  </section>
-
-  <section class="projects">
-    <div class="project-card" data-aos="fade-up">
-      <img src="assets/images/code1.png" alt="Code Snippet">
-      <h3>Unity Tool – Dialogue System</h3>
-      <p>Custom C# scriptable dialogue system with event hooks and localization.</p>
-    </div>
-  </section>
+  <main>
+    <section class="page-title">
+      <h1>Programming Skills</h1>
+      <p>Gameplay systems, tools, scripts, prototypes.</p>
+    </section>
+    <section class="projects">
+      <div class="project-card">
+        <img src="assets/images/code1.png" alt="Code Snippet">
+        <h3>Unity Tool – Dialogue System</h3>
+        <p>Custom C# scriptable dialogue system with event hooks and localization.</p>
+      </div>
+      <!-- Add more project cards as needed -->
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Advait Rege</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/YOUR_USERNAME" target="_blank" title="Instagram">
+        <img src="assets/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://discord.com/users/YOUR_DISCORD_ID" target="_blank" title="Discord">
+        <img src="assets/discord.svg" alt="Discord">
+      </a>
+      <a href="tel:+911234567890" title="Call">
+        <img src="assets/phone.svg" alt="Phone">
+      </a>
+      <a href="mailto:your@email.com" title="Email">
+        <img src="assets/email.svg" alt="Email">
+      </a>
+    </div>
+    <p>© 2025 Advait Rege Portfolio</p>
   </footer>
 
-  <script src="lib/aos/aos.js"></script>
-  <script>AOS.init();</script>
+  <script src="js/particle-background.js"></script>
+  <script src="js/nebula-background.js"></script>
 </body>
 </html>
