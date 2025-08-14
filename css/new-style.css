@@ -354,6 +354,17 @@ body {
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 30px var(--accent-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glitch-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  position: relative;
 }
 
 .glitch-layer {
@@ -779,6 +790,14 @@ body {
   transition: all 0.5s ease;
 }
 
+.project-image img[src$=".svg"] {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .project-card:hover .project-image img {
   transform: scale(1.1);
 }
@@ -875,9 +894,14 @@ body {
   height: 50px;
   border-radius: 50%;
   background: rgba(138, 43, 226, 0.2);
-  color: var(--accent-purple);
-  font-size: 1.5rem;
   transition: all 0.3s ease;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .social-links a:hover {
