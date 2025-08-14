@@ -771,6 +771,10 @@ body {
   position: relative;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-card:hover {
@@ -781,6 +785,7 @@ body {
 .project-image {
   position: relative;
   overflow: hidden;
+  height: 300px;
 }
 
 .project-image img {
@@ -817,6 +822,7 @@ body {
   text-align: center;
   opacity: 0;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .project-card:hover .project-overlay {
