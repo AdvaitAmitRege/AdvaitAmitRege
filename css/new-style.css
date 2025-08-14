@@ -189,6 +189,13 @@ body {
   text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
 }
 
+@media (max-width: 576px) {
+  .logo-text {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+  }
+}
+
 .logo-text .neon {
   text-shadow: var(--neon-glow);
   animation: neon-pulse 2s infinite alternate;

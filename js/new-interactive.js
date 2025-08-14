@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Custom Cursor
 function initCursor() {
+    // Check if device is mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Disable cursor effects on mobile
+    if (isMobile) {
+        return;
+    }
+    
     const cursor = document.createElement('div');
     const follower = document.createElement('div');
     
@@ -27,16 +35,6 @@ function initCursor() {
     let posX = 0;
     let posY = 0;
     let speed = 0.3; // Increased speed
-    
-    // Check if device is mobile
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    // Disable cursor effects on mobile
-    if (isMobile) {
-        cursor.style.display = 'none';
-        follower.style.display = 'none';
-        return;
-    }
     
     // Mouse move event
     document.addEventListener('mousemove', (e) => {
