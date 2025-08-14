@@ -1,47 +1,95 @@
-<!-- filepath: portfolio-website/projects.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects - Game Developer Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="bg-decor">
-        <span class="bg-decor-x x1">✕</span>
-        <span class="bg-decor-x x2">✕</span>
-        <span class="bg-decor-x x3">✕</span>
-    </div>
-    <header>
-        <div class="header-bar">
-            <div class="header-title">GAME DEVELOPER</div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="skills.html">Skills</a>
-                <a href="contact.html">Contact</a>
-            </nav>
+    <!-- Game elements -->
+    <div class="game-element circle" style="top: 10%; left: 5%;"></div>
+    <div class="game-element triangle" style="top: 20%; right: 10%;"></div>
+    <div class="game-element square" style="bottom: 15%; left: 15%;"></div>
+    
+<!-- Removed the container to eliminate gaps -->
+<header>
+    <div class="header-content">
+        <div class="profile-section">
+          <div class="profile-image">
+            <div class="image-placeholder"></div>
+          </div>
+          <div class="profile-info">
+            <h1 class="name">Advait Amit Rege</h1>
+            <p class="title">Game Developer</p>
+            <div class="social-links">
+              <a href="#" class="social-link">FB</a>
+              <a href="#" class="social-link">TW</a>
+              <a href="#" class="social-link">IG</a>
+              <a href="#" class="social-link">SC</a>
+            </div>
+          </div>
         </div>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">ABOUT & SKILLS</a>
+          <a href="projects.html">PROJECTS</a>
+          <a href="contact.html">CONTACT</a>
+        </nav>
+      </div>
     </header>
     <main>
-        <section>
-            <h2>Project 1</h2>
-            <p>Description of Project 1. This project involves...</p>
-            <a href="https://link-to-live-demo.com">Live Demo</a>
-            <a href="https://link-to-repository.com">View Repository</a>
+        <section class="projects-hero">
+            <h1>MY PROJECTS</h1>
+            <p class="subtitle">Explore my game development journey through these featured projects</p>
         </section>
-        <section>
-            <h2>Project 2</h2>
-            <p>Description of Project 2. This project focuses on...</p>
-            <a href="https://link-to-live-demo.com">Live Demo</a>
-            <a href="https://link-to-repository.com">View Repository</a>
+        
+        <section class="featured-projects">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/icons/game-category.jpg" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h2>Project 1</h2>
+                    <p>Description of Project 1. This project involves creating an immersive 3D adventure game with unique mechanics and storytelling.</p>
+                    <div class="project-links">
+                        <a href="https://link-to-live-demo.com" class="btn-primary">Live Demo</a>
+                        <a href="https://link-to-repository.com" class="btn-secondary">View Repository</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/icons/programming-category.jpg" alt="Project 2">
+                </div>
+                <div class="project-content">
+                    <h2>Project 2</h2>
+                    <p>Description of Project 2. This project focuses on developing a puzzle platformer with innovative level design and physics-based gameplay.</p>
+                    <div class="project-links">
+                        <a href="https://link-to-live-demo.com" class="btn-primary">Live Demo</a>
+                        <a href="https://link-to-repository.com" class="btn-secondary">View Repository</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/icons/skills-category.jpg" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <h2>Project 3</h2>
+                    <p>Description of Project 3. This project showcases a real-time strategy game with complex AI systems and multiplayer capabilities.</p>
+                    <div class="project-links">
+                        <a href="https://link-to-live-demo.com" class="btn-primary">Live Demo</a>
+                        <a href="https://link-to-repository.com" class="btn-primary secondary">View Repository</a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <!-- Add more projects as needed -->
     </main>
     <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+        <p>&copy; 2023 Game Developer Portfolio. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
     <script src="js/scroll-reveal.js"></script>

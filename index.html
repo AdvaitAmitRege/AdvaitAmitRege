@@ -3,49 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
-    <script src="js/scroll-reveal.js" defer></script>
+    <title>Game Developer Portfolio | Advait Amit Rege</title>
+    <link rel="stylesheet" href="css/new-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-bar">
-            <div class="header-title">GAME DEVELOPER</div>
-            <nav>
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="skills.html">Skills</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <section class="hero">
+    <!-- Animated background elements -->
+    <div class="background-elements">
+        <div class="element circle"></div>
+        <div class="element triangle"></div>
+        <div class="element square"></div>
+        <div class="element circle large"></div>
+        <div class="element triangle large"></div>
+        <div class="element square large"></div>
+    </div>
+
+    <!-- Interactive cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Main content -->
+    <div class="container">
+        <!-- Header with navigation -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1 class="logo-text">LEVEL<span class="neon">UP</span></h1>
+                </div>
+                <nav class="navigation">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#home" class="nav-link active">HOME</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">ABOUT</a></li>
+                        <li class="nav-item"><a href="#skills" class="nav-link">SKILLS</a></li>
+                        <li class="nav-item"><a href="#projects" class="nav-link">PROJECTS</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
             <div class="hero-content">
-                <div class="header-title"></div>
-                <h1 class="hero-title">
-                    HELLO<br>
-                    I'M A <span class="gradient">GAME<br>DEVELOPER</span>
-                </h1>
-                <p class="hero-subtitle">I design and develop video games with engaging experiences.</p>
-                <a href="#projects" class="hero-btn">VIEW MY WORK</a>
+                <div class="hero-text">
+                    <h2 class="hero-title">
+                        <span class="line">GAME DEVELOPER</span>
+                        <span class="line">&</span>
+                        <span class="line">INTERACTIVE DESIGNER</span>
+                    </h2>
+                    <p class="hero-subtitle">Creating immersive worlds and engaging experiences through code and creativity</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">VIEW PROJECTS</a>
+                        <a href="#contact" class="btn btn-secondary">GET IN TOUCH</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="glitch-image">
+                        <div class="glitch-layer"></div>
+                        <div class="glitch-layer"></div>
+                        <div class="glitch-layer"></div>
+                    </div>
+                </div>
             </div>
-            <img src="assets/images/file.jpg" alt="Gamepad" class="hero-image controller-mask">
-        </section>
-        <section class="introduction">
-            <h2>Hello!</h2>
-            <p>This is my portfolio website where you can learn more about my work and skills.</p>
-        </section>
-        <section class="featured-projects">
-            <h2>Featured Projects</h2>
-            <div class="project-list">
-                <!-- Project items will be added here -->
+            <div class="scroll-down">
+                <span>SCROLL DOWN</span>
+                <div class="mouse">
+                    <span></span>
+                </div>
             </div>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
-    </footer>
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="section-header">
+                <h2 class="section-title">ABOUT ME</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate game developer with a deep love for creating immersive experiences that captivate players. With years of experience in the industry, I've worked on a variety of projects ranging from indie titles to large-scale productions.</p>
+                    <p>My journey began with simple 2D games and has evolved into creating complex 3D worlds with intricate mechanics and storytelling. I believe that great games are born from a combination of technical skill, creative vision, and a deep understanding of player psychology.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="500">0</span>
+                            <span class="stat-label">PROJECTS</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">CLIENTS</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="10">0</span>
+                            <span class="stat-label">YEARS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="progress-grid">
+                        <div class="progress-item">
+                            <h3>Game Design</h3>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <h3>Unity</h3>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <h3>Unreal Engine</h3>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <h3>C++</h3>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills">
+            <div class="section-header">
+                <h2 class="section-title">MY SKILLS</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>Game Design</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="95"></div>
+                            </div>
+                        </div>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Unity</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="90"></div>
+                            </div>
+                        </div>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3>3D Modeling</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="85"></div>
+                            </div>
+                        </div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-percent="80"></div>
+                            </div>
+                        </div>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <div class="section-header">
+                <h2 class="section-title">FEATURED PROJECTS</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-content">
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/project1.jpg" alt="Project 1">
+                            <div class="project-overlay">
+                                <h3>Epic Quest Adventures</h3>
+                                <p>An open-world RPG with over 500,000 downloads</p>
+                                <a href="#" class="btn btn-small">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/project2.jpg" alt="Project 2">
+                            <div class="project-overlay">
+                                <h3>Puzzle Dimension</h3>
+                                <p>A mobile puzzle game featured in the App Store</p>
+                                <a href="#" class="btn btn-small">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/project3.jpg" alt="Project 3">
+                            <div class="project-overlay">
+                                <h3>Space Combat Elite</h3>
+                                <p>A multiplayer space simulation game</p>
+                                <a href="#" class="btn btn-small">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="section-header">
+                <h2 class="section-title">GET IN TOUCH</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Collaborate</h3>
+                    <p>Have a project in mind? Feel free to reach out and let's create something amazing together.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@gamedeveloper.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>San Francisco, CA</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2023 Game Developer Portfolio. All rights reserved.</p>
+                <p>Designed and Developed with <span class="heart">❤</span> for gaming</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script src="js/new-interactive.js"></script>
 </body>
 </html>
