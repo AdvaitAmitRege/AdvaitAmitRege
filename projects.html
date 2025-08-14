@@ -4,94 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Game Developer Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/new-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Game elements -->
-    <div class="game-element circle" style="top: 10%; left: 5%;"></div>
-    <div class="game-element triangle" style="top: 20%; right: 10%;"></div>
-    <div class="game-element square" style="bottom: 15%; left: 15%;"></div>
-    
-<!-- Removed the container to eliminate gaps -->
-<header>
-    <div class="header-content">
-        <div class="profile-section">
-          <div class="profile-image">
-            <div class="image-placeholder"></div>
-          </div>
-          <div class="profile-info">
-            <h1 class="name">Advait Amit Rege</h1>
-            <p class="title">Game Developer</p>
-            <div class="social-links">
-              <a href="#" class="social-link">FB</a>
-              <a href="#" class="social-link">TW</a>
-              <a href="#" class="social-link">IG</a>
-              <a href="#" class="social-link">SC</a>
+    <!-- Animated background elements -->
+    <div class="background-elements">
+        <div class="element circle"></div>
+        <div class="element triangle"></div>
+        <div class="element square"></div>
+        <div class="element circle large"></div>
+        <div class="element triangle large"></div>
+        <div class="element square large"></div>
+    </div>
+
+    <!-- Interactive cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Main content -->
+    <div class="container">
+        <!-- Header with navigation -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1 class="logo-text">Advait <span class="neon">Rege</span></h1>
+                </div>
+                <nav class="navigation">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">HOME</a></li>
+                        <li class="nav-item"><a href="index.html#about" class="nav-link">ABOUT</a></li>
+                        <li class="nav-item"><a href="index.html#skills" class="nav-link">SKILLS</a></li>
+                        <li class="nav-item"><a href="index.html#projects" class="nav-link active">PROJECTS</a></li>
+                        <li class="nav-item"><a href="index.html#contact" class="nav-link">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-          </div>
-        </div>
-        <nav class="main-nav">
-          <a href="index.html">Home</a>
-          <a href="about.html">ABOUT & SKILLS</a>
-          <a href="projects.html">PROJECTS</a>
-          <a href="contact.html">CONTACT</a>
-        </nav>
-      </div>
-    </header>
-    <main>
-        <section class="projects-hero">
-            <h1>MY PROJECTS</h1>
-            <p class="subtitle">Explore my game development journey through these featured projects</p>
+        </header>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <div class="section-header">
+                <h2 class="section-title">ALL PROJECTS</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-content">
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/project1.jpg" alt="Project 1">
+                            <div class="project-overlay">
+                                <h3>Epic Quest Adventures</h3>
+                                <p>An open-world RPG with over 500,000 downloads</p>
+                                <a href="#" class="btn btn-small">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/project2.jpg" alt="Project 2">
+                            <div class="project-overlay">
+                                <h3>Puzzle Dimension</h3>
+                                <p>A mobile puzzle game featured in the App Store</p>
+                                <a href="#" class="btn btn-small">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/project3.jpg" alt="Project 3">
+                            <div class="project-overlay">
+                                <h3>Space Combat Elite</h3>
+                                <p>A multiplayer space simulation game</p>
+                                <a href="#" class="btn btn-small">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/icons/game-category.jpg" alt="Project 4">
+                            <div class="project-overlay">
+                                <h3>Neon Racer</h3>
+                                <p>A futuristic racing game with neon aesthetics</p>
+                                <a href="#" class="btn btn-small">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/icons/programming-category.jpg" alt="Project 5">
+                            <div class="project-overlay">
+                                <h3>Pixel Quest</h3>
+                                <p>A retro-style platformer with modern mechanics</p>
+                                <a href="#" class="btn btn-small">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/icons/skills-category.jpg" alt="Project 6">
+                            <div class="project-overlay">
+                                <h3>Virtual Reality Experience</h3>
+                                <p>An immersive VR experience with hand tracking</p>
+                                <a href="#" class="btn btn-small">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        
-        <section class="featured-projects">
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/images/icons/game-category.jpg" alt="Project 1">
-                </div>
-                <div class="project-content">
-                    <h2>Project 1</h2>
-                    <p>Description of Project 1. This project involves creating an immersive 3D adventure game with unique mechanics and storytelling.</p>
-                    <div class="project-links">
-                        <a href="https://link-to-live-demo.com" class="btn-primary">Live Demo</a>
-                        <a href="https://link-to-repository.com" class="btn-secondary">View Repository</a>
-                    </div>
-                </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2023 Game Developer Portfolio. All rights reserved.</p>
+                <p>Designed and Developed with <span class="heart">❤</span> for gaming</p>
             </div>
-            
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/images/icons/programming-category.jpg" alt="Project 2">
-                </div>
-                <div class="project-content">
-                    <h2>Project 2</h2>
-                    <p>Description of Project 2. This project focuses on developing a puzzle platformer with innovative level design and physics-based gameplay.</p>
-                    <div class="project-links">
-                        <a href="https://link-to-live-demo.com" class="btn-primary">Live Demo</a>
-                        <a href="https://link-to-repository.com" class="btn-secondary">View Repository</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/images/icons/skills-category.jpg" alt="Project 3">
-                </div>
-                <div class="project-content">
-                    <h2>Project 3</h2>
-                    <p>Description of Project 3. This project showcases a real-time strategy game with complex AI systems and multiplayer capabilities.</p>
-                    <div class="project-links">
-                        <a href="https://link-to-live-demo.com" class="btn-primary">Live Demo</a>
-                        <a href="https://link-to-repository.com" class="btn-primary secondary">View Repository</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Game Developer Portfolio. All rights reserved.</p>
-    </footer>
-    <script src="js/script.js"></script>
-    <script src="js/scroll-reveal.js"></script>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/new-interactive.js"></script>
 </body>
 </html>
