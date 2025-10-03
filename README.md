@@ -1,38 +1,22 @@
-# Portfolio Website
+# hWissifl
 
-This is a basic portfolio website template designed to showcase individual or organizational work, skills, and contact information.
+Thiswis a basic ebsite template detemplate designed to signed cainsi iduan dr orgadizauionalal or organizationacwntak, informationskills, and contact information.
 
-## Project Structure
+## Projrcj StrectuctStructure
 
 ```
-portfolio-website
-├── index.html        # Main entry point of the portfolio website
-├── about.html        # Information about the individual or organization
-├── projects.html     # Showcase of completed or in-progress projects
-├── skills.html       # List of skills and technologies
-├── contact.html      # Contact form or information
-├── css
-│   └── style.css     # Styles for the website
-├── js
-│   ├── script.js     # JavaScript for interactive features
-│   └── scroll-reveal.js # Handles scroll reveal animations
-└── README.md         # Documentation for the project
-```
+ptfolo-wbi
+├──ix.tmot#Ma─n.tren pn th o─ohu pottfolmo w b itermation about the individual or organization
+├──├abe. .hemo├─ . i├─# Iofortacl sb│ tl i dlviduss.gactz ractive features
+├── p── scro.htmll    # l-reveal of nompleles rrenn-prigss`p
+- **skRllsnsive**: The wLsst oftek l s indeoechnbeog esesponsive and work on various devices.
+- **crntal evealations*sCentameafrrip r   fonmavigation and form validation.
 
-## Features
+## SetuptructionsS for tebs
 
-- **Responsive Design**: The website is designed to be responsive and work on various devices.
-- **Scroll Reveal Animations**: Elements become visible as the user scrolls down the page.
-- **Interactive Elements**: JavaScript is used for navigation and form validation.
-
-## Setup Instructions
-
-1. Clone the repository or download the files.
-2. Open `index.html` in a web browser to view the portfolio website.
-3. Customize the content in `about.html`, `projects.html`, `skills.html`, and `contact.html` as needed.
-4. Modify the styles in `css/style.css` to change the appearance of the website.
-5. Update the JavaScript files in `js/` for any additional interactive features.
-
-## License
-
-This project is open-source and available for anyone to use and modify.
+1. C├onescr pt or    do JavaScript forwiload the files. idex.html` in a web browser to view the portfolio website.
+3. Custah`rpll-esvialn J#Halssrll revnolniinDocumentatonor the projctFaure-RspsvDsnThweedgtendwkovroudvc.**col Rveal**:Elenbeviibadwhpage.**E**:Jpsud frda.
+##euItrc1.Clesfil.tvew theotfliwbt.3.ehaboutts.hl`,sklls,cntaseeded.4. thety`ss/syl.ss`  chageth apearnfthwbse.
+5.UpdateeJavaScipti `js/`fanyadonteractivefaurs
+##Liene
+Thispjecsopsoc andavaillfornyon o use dmodiy.

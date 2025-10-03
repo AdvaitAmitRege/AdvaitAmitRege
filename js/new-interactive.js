@@ -21,54 +21,46 @@ function initCursor() {
         return;
     }
     
-    const cursor = document.createElement('div');
-    const follower = document.createElement('div');
-    
-    cursor.classList.add('cursor');
-    follower.classList.add('cursor-follower');
-    
-    document.body.appendChild(cursor);
-    document.body.appendChild(follower);
-    
-    let mouseX = 0;
-    let mouseY = 0;
-    let posX = 0;
-    let posY = 0;
-    let speed = 0.3; // Increased speed
-    
-    // Mouse move event
+    // Create ring + dot cursor
+    const cursorDot = document.createElement('div');
+    const cursorRing = document.createElement('div');
+    cursorDot.classList.add('cursor-dot');
+    cursorRing.classList.add('cursor-ring');
+    document.body.appendChild(cursorDot);
+    document.body.appendChild(cursorRing);
+
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+    let ringScale = 1;
+    const ringSpeed = 0.18;
+
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
     });
-    
-    // Animation loop
+
     function animate() {
-        posX += (mouseX - posX) * speed;
-        posY += (mouseY - posY) * speed;
-        
-        cursor.style.left = `${mouseX}px`;
-        cursor.style.top = `${mouseY}px`;
-        
-        follower.style.left = `${posX}px`;
-        follower.style.top = `${posY}px`;
-        
+        ringX += (mouseX - ringX) * ringSpeed;
+        ringY += (mouseY - ringY) * ringSpeed;
+        cursorRing.style.left = `${ringX}px`;
+        cursorRing.style.top = `${ringY}px`;
+        cursorRing.style.transform = `translate(-50%, -50%) scale(${ringScale})`;
         requestAnimationFrame(animate);
     }
-    
     animate();
-    
-    // Hover effects
+
+    // Expand/glow ring on hover
     const hoverElements = document.querySelectorAll('a, button, .nav-link, .skill-card, .project-card');
-    
     hoverElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            follower.classList.add('active');
-            playSound(783.99, 0.05); // G5 note
+            ringScale = 1.5;
+            cursorRing.classList.add('cursor-ring-hover');
         });
-        
         el.addEventListener('mouseleave', () => {
-            follower.classList.remove('active');
+            ringScale = 1;
+            cursorRing.classList.remove('cursor-ring-hover');
         });
     });
 }
@@ -84,7 +76,6 @@ function initNavigation() {
         menuToggle.addEventListener('click', () => {
             navigation.classList.toggle('active');
             menuToggle.classList.toggle('active');
-            playSound(523.25, 0.1); // C5 note
         });
     }
     
@@ -112,8 +103,6 @@ function initNavigation() {
                         navigation.classList.remove('active');
                         menuToggle.classList.remove('active');
                     }
-                    
-                    playSound(523.25, 0.1); // C5 note
                 }
             }
         });
@@ -241,14 +230,7 @@ function initStatsCounter() {
 
 // Project Hover Effects
 function initProjectHover() {
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            createParticles(card, 10);
-            playSound(659.25, 0.1); // E5 note
-        });
-    });
+    // Hover effects removed as per user request
 }
 
 // Contact Form
@@ -267,7 +249,6 @@ function initContactForm() {
             // Simple validation
             if (!name || !email || !message) {
                 showMessage('Please fill in all fields', 'error');
-                playSound(349.23, 0.3); // F4 note (lower pitch for error)
                 return;
             }
             
@@ -275,19 +256,14 @@ function initContactForm() {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 showMessage('Please enter a valid email address', 'error');
-                playSound(349.23, 0.3); // F4 note (lower pitch for error)
                 return;
             }
             
             // Simulate form submission
             showMessage('Message sent successfully!', 'success');
-            playSound(1046.50, 0.3); // C6 note (higher pitch for success)
             
             // Reset form
             form.reset();
-            
-            // Add visual feedback
-            createParticles(form, 20);
         });
     }
 }
@@ -315,103 +291,12 @@ function showMessage(text, type) {
     }, 3000);
 }
 
-// Particle System
-function createParticles(element, count) {
-    const rect = element.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    
-    for (let i = 0; i < count; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        // Random properties
-        const size = Math.random() * 5 + 2;
-        const color = `hsl(${Math.random() * 360}, 100%, 70%)`;
-        const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 3 + 1;
-        const distance = Math.random() * 50 + 50;
-        
-        // Position
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.backgroundColor = color;
-        particle.style.boxShadow = `0 0 ${size * 2}px ${color}`;
-        particle.style.left = `${centerX}px`;
-        particle.style.top = `${centerY}px`;
-        particle.style.position = 'fixed';
-        particle.style.borderRadius = '50%';
-        particle.style.pointerEvents = 'none';
-        particle.style.zIndex = '9999';
-        
-        document.body.appendChild(particle);
-        
-        // Animate
-        const startTime = Date.now();
-        const duration = 1000;
-        
-        function animate() {
-            const elapsed = Date.now() - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            
-            const x = centerX + Math.cos(angle) * distance * progress;
-            const y = centerY + Math.sin(angle) * distance * progress;
-            const opacity = 1 - progress;
-            const currentSize = size * (1 - progress * 0.5);
-            
-            particle.style.left = `${x}px`;
-            particle.style.top = `${y}px`;
-            particle.style.opacity = opacity;
-            particle.style.width = `${currentSize}px`;
-            particle.style.height = `${currentSize}px`;
-            
-            if (progress < 1) {
-                requestAnimationFrame(animate);
-            } else {
-                particle.remove();
-            }
-        }
-        
-        animate();
-    }
-}
-
-// Sound Effects
-function playSound(frequency, duration, type = 'sine') {
-    try {
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        const oscillator = audioCtx.createOscillator();
-        const gainNode = audioCtx.createGain();
-        
-        oscillator.connect(gainNode);
-        gainNode.connect(audioCtx.destination);
-        
-        oscillator.type = type;
-        oscillator.frequency.value = frequency;
-        gainNode.gain.value = 0.1;
-        
-        oscillator.start();
-        gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + duration);
-        oscillator.stop(audioCtx.currentTime + duration);
-    } catch (e) {
-        // Fail silently if audio context is not available
-    }
-}
-
 // Keyboard Navigation (Game-like)
 document.addEventListener('keydown', (e) => {
     // WASD navigation
     if (e.key === 'w' || e.key === 'W') {
         window.scrollBy(0, -50);
-        playSound(523.25, 0.05); // C5 note
     } else if (e.key === 's' || e.key === 'S') {
         window.scrollBy(0, 50);
-        playSound(587.33, 0.05); // D5 note
-    } else if (e.key === 'a' || e.key === 'A') {
-        // Add custom action for A key
-        playSound(659.25, 0.05); // E5 note
-    } else if (e.key === 'd' || e.key === 'D') {
-        // Add custom action for D key
-        playSound(698.46, 0.05); // F5 note
     }
 });
