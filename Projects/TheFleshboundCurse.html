@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Fleshbound Curse</title>
   <link rel="stylesheet" href="css/Projects_style.css">
+  <link rel="stylesheet" href="../css/new-style.css">
 </head>
 <body>
   <header class="header" style="background:rgba(30,30,60,0.7);backdrop-filter:blur(8px);padding:1.2rem 0 1.2rem 0;box-shadow:0 2px 16px 0 rgba(120,80,255,0.08);border-bottom:1.5px solid rgba(160,132,238,0.10);">
@@ -15,14 +17,14 @@
     </div>
   </header>
   <div class="project-banner">
-  <img src="../assets/images/TheFleshboundCurse/TFC_1.jpg" alt="The Fleshbound Curse Banner">
-    <div class="banner-title">The Fleshbound Curse</div>
+    <img src="../assets/images/TheFleshboundCurse/TFC_1.jpg" alt="The Fleshbound Curse Banner">
+    <div class="banner-title enhanced">The Fleshbound Curse</div>
   </div>
   <main class="project-main-content">
     <div class="info-cards">
       <div class="info-card">
-  <h3>About</h3>
-  <div>The Fleshbound Curse is an open-world RPG. Explore a vast world, complete quests, and battle epic bosses. Built with Unity and C#.</div>
+        <h3>About</h3>
+        <div>The Fleshbound Curse is an open-world RPG. Explore a vast world, complete quests, and battle epic bosses. Built with Unity and C#.</div>
       </div>
       <div class="info-card">
         <h3>Project Info</h3>
@@ -35,123 +37,199 @@
       </div>
     </div>
 
-    <h2 class="section-title">Introduction</h2>
-    <div style="margin-bottom:2.2rem;line-height:1.7;">
-      The Fleshbound Curse is a passion project that challenged me to design a seamless open world, engaging questlines, and dynamic combat. I focused on optimization, procedural generation, and player experience throughout development.
+    <!-- Level Tabs -->
+    <div class="level-tabs-container">
+      <div class="level-tabs">
+        <button class="level-tab active" data-tab="level1">Area 1</button>
+        <button class="level-tab" data-tab="level2">Area 2</button>
+        <button class="level-tab" data-tab="level3">Area 3</button>
+      </div>
+      <div class="level-tab-content active" id="level1">
+        <h3>Area 1: The Cursed Forest</h3>
+        <p>Explore the mysterious cursed forest, filled with ancient secrets and dangerous creatures. Solve puzzles and defeat mini-bosses to progress.</p>
+        <div class="carousel" data-carousel="level1">
+          <div class="carousel-track">
+            <img src="../assets/images/TheFleshboundCurse/TFC_1.jpg" alt="Area 1 Screenshot 1">
+            <img src="../assets/images/TheFleshboundCurse/TFC_2.jpg" alt="Area 1 Screenshot 2">
+          </div>
+        </div>
+        <section class="level-horizontal-details">
+          <div class="h-detail vision">
+            <div class="h-detail-bar vision"></div>
+            <div class="h-detail-icon">🌟</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Vision</div>
+              <div class="h-detail-desc">Create a haunting, explorable forest with dynamic weather and hidden lore.</div>
+            </div>
+          </div>
+          <div class="h-detail challenges">
+            <div class="h-detail-bar challenges"></div>
+            <div class="h-detail-icon">⚠️</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Key Challenges</div>
+              <ul class="h-detail-list">
+                <li><strong>Atmosphere:</strong> Balancing fear and curiosity</li>
+                <li><strong>Pacing:</strong> Keeping exploration engaging</li>
+              </ul>
+            </div>
+          </div>
+          <div class="h-detail fixes">
+            <div class="h-detail-bar fixes"></div>
+            <div class="h-detail-icon">🛠️</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Fixes & Improvements</div>
+              <ul class="h-detail-list">
+                <li>Added dynamic fog and lighting</li>
+                <li>Improved enemy AI for forest encounters</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="level-tab-content" id="level2">
+        <h3>Area 2: Ruined Catacombs</h3>
+        <p>Descend into ancient catacombs beneath the world, facing traps, puzzles, and undead guardians. Find relics to unlock new abilities.</p>
+        <div class="carousel" data-carousel="level2">
+          <div class="carousel-track">
+            <img src="../assets/images/TheFleshboundCurse/TFC_3.jpg" alt="Area 2 Screenshot 1">
+            <img src="../assets/images/TheFleshboundCurse/TFC_4.jpg" alt="Area 2 Screenshot 2">
+          </div>
+        </div>
+        <section class="level-horizontal-details">
+          <div class="h-detail vision">
+            <div class="h-detail-bar vision"></div>
+            <div class="h-detail-icon">🌟</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Vision</div>
+              <div class="h-detail-desc">Design a labyrinthine dungeon with secrets and verticality.</div>
+            </div>
+          </div>
+          <div class="h-detail challenges">
+            <div class="h-detail-bar challenges"></div>
+            <div class="h-detail-icon">⚠️</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Key Challenges</div>
+              <ul class="h-detail-list">
+                <li><strong>Puzzle Design:</strong> Challenging but fair</li>
+                <li><strong>Enemy Variety:</strong> Keeping combat fresh</li>
+              </ul>
+            </div>
+          </div>
+          <div class="h-detail fixes">
+            <div class="h-detail-bar fixes"></div>
+            <div class="h-detail-icon">🛠️</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Fixes & Improvements</div>
+              <ul class="h-detail-list">
+                <li>Added new trap mechanics</li>
+                <li>Balanced loot and rewards</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="level-tab-content" id="level3">
+        <h3>Area 3: The Cursed Throne</h3>
+        <p>Face the final boss in a dramatic throne room. Use all skills and abilities learned to break the curse and free the land.</p>
+        <div class="carousel" data-carousel="level3">
+          <div class="carousel-track">
+            <img src="../assets/images/TheFleshboundCurse/TFC_5.jpg" alt="Area 3 Screenshot 1">
+            <img src="../assets/images/TheFleshboundCurse/TFC_1.jpg" alt="Area 3 Screenshot 2">
+          </div>
+        </div>
+        <section class="level-horizontal-details">
+          <div class="h-detail vision">
+            <div class="h-detail-bar vision"></div>
+            <div class="h-detail-icon">🌟</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Vision</div>
+              <div class="h-detail-desc">Deliver a climactic, cinematic boss fight with multiple phases.</div>
+            </div>
+          </div>
+          <div class="h-detail challenges">
+            <div class="h-detail-bar challenges"></div>
+            <div class="h-detail-icon">⚠️</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Key Challenges</div>
+              <ul class="h-detail-list">
+                <li><strong>Boss Design:</strong> Multi-phase, fair but tough</li>
+                <li><strong>Visuals:</strong> Making the throne room epic</li>
+              </ul>
+            </div>
+          </div>
+          <div class="h-detail fixes">
+            <div class="h-detail-bar fixes"></div>
+            <div class="h-detail-icon">🛠️</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Fixes & Improvements</div>
+              <ul class="h-detail-list">
+                <li>Added boss attack telegraphs</li>
+                <li>Polished cutscenes and ending</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
-    <h2 class="section-title">Features & Highlights</h2>
-    <ul class="info-list" style="margin-bottom:2.2rem;">
-      <li><span class="icon">🗺️</span>Massive seamless world to explore</li>
-      <li><span class="icon">⚔️</span>Epic boss battles and dungeons</li>
-      <li><span class="icon">🎮</span>Customizable controls and UI</li>
-      <li><span class="icon">🏆</span>500,000+ downloads worldwide</li>
-    </ul>
-
-
-    <!-- Z-pattern, no card, clean editorial layout -->
-    <section style="margin:3.5rem 0 2.5rem 0;display:flex;align-items:center;gap:3vw;flex-wrap:wrap;">
-  <img src="../assets/images/TheFleshboundCurse/TFC_1.jpg" alt="The Fleshbound Curse Banner" style="flex:1 1 340px;min-width:260px;max-width:480px;width:38vw;height:260px;object-fit:cover;display:block;border-radius:0;">
-      <div style="flex:2 1 340px;min-width:220px;">
-    <h3 style="margin-top:0;color:#a084ee;font-family:'Orbitron',sans-serif;font-size:1.2rem;">A World to Discover</h3>
-    <p style="line-height:1.7;">The world of The Fleshbound Curse is filled with diverse environments, from lush forests to ancient ruins. Each area is crafted to encourage exploration and discovery.</p>
-      </div>
-    </section>
-
-    <section style="margin:3.5rem 0 2.5rem 0;display:flex;align-items:center;gap:3vw;flex-wrap:wrap;flex-direction:row-reverse;">
-  <img src="../assets/images/TheFleshboundCurse/TFC_1.jpg" alt="The Fleshbound Curse Banner" style="flex:1 1 340px;min-width:260px;max-width:480px;width:38vw;height:260px;object-fit:cover;display:block;border-radius:0;">
-      <div style="flex:2 1 340px;min-width:220px;">
-        <h3 style="margin-top:0;color:#a084ee;font-family:'Orbitron',sans-serif;font-size:1.2rem;">Dynamic Combat</h3>
-        <p style="line-height:1.7;">Combat is fast-paced and strategic, requiring players to master a variety of weapons and abilities to defeat powerful bosses and enemies.</p>
-      </div>
-    </section>
-
-    <section style="margin:3.5rem 0 2.5rem 0;display:flex;align-items:center;gap:3vw;flex-wrap:wrap;">
-  <img src="../assets/images/TheFleshboundCurse/TFC_1.jpg" alt="The Fleshbound Curse Banner" style="flex:1 1 340px;min-width:260px;max-width:480px;width:38vw;height:260px;object-fit:cover;display:block;border-radius:0;">
-      <div style="flex:2 1 340px;min-width:220px;">
-        <h3 style="margin-top:0;color:#a084ee;font-family:'Orbitron',sans-serif;font-size:1.2rem;">Challenging Dungeons</h3>
-        <p style="line-height:1.7;">Dungeons are filled with traps, puzzles, and treasures, rewarding players for their curiosity and skill.</p>
-      </div>
-    </section>
-
-    <section style="margin:3.5rem 0 2.5rem 0;display:flex;align-items:center;gap:3vw;flex-wrap:wrap;flex-direction:row-reverse;">
-  <img src="../assets/images/TheFleshboundCurse/TFC_1.jpg" alt="The Fleshbound Curse Banner" style="flex:1 1 340px;min-width:260px;max-width:480px;width:38vw;height:260px;object-fit:cover;display:block;border-radius:0;">
-      <div style="flex:2 1 340px;min-width:220px;">
-        <h3 style="margin-top:0;color:#a084ee;font-family:'Orbitron',sans-serif;font-size:1.2rem;">Epic Boss Battles</h3>
-        <p style="line-height:1.7;">Epic boss battles are a highlight of the adventure, each requiring unique tactics and teamwork to overcome.</p>
-      </div>
-    </section>
-
-  </main>
   </main>
   <script src="../js/new-interactive.js"></script>
   <script>
-    // Infinite auto-scroll with seamless transform reset using a single row
-    (function() {
-      const row = document.querySelector('.media-collage-row');
-      if (!row) return;
-      let speed = 0.25; // px per frame
-      let slowSpeed = 0.05;
-      let currentSpeed = speed;
-      let isHovering = false;
-      let offset = 0;
-      let rowWidth = 0;
-
-      function updateRowWidth() {
-        rowWidth = row.scrollWidth;
-      }
-      updateRowWidth();
-      window.addEventListener('resize', updateRowWidth);
-
-      function scrollStep() {
-        offset += currentSpeed;
-        if (offset >= rowWidth) {
-          offset = 0;
-        }
-        row.style.transform = `translateX(${-offset}px)`;
-        requestAnimationFrame(scrollStep);
-      }
-
-      row.addEventListener('mouseenter', () => {
-        isHovering = true;
-        currentSpeed = slowSpeed;
-      });
-      row.addEventListener('mouseleave', () => {
-        isHovering = false;
-        currentSpeed = speed;
-      });
-
-      requestAnimationFrame(scrollStep);
-    })();
-  </script>
-  <script>
-    // Expand image on click when hovered (slow state)
+    // Simple tab logic for level tabs
     document.addEventListener('DOMContentLoaded', function() {
-      const collageRow = document.querySelector('.media-collage-row');
-      let isHovering = false;
-      if (collageRow) {
-        collageRow.addEventListener('mouseenter', () => { isHovering = true; });
-        collageRow.addEventListener('mouseleave', () => { isHovering = false; });
-        collageRow.addEventListener('click', function(e) {
-          if (!isHovering) return;
-          const img = e.target.closest('img');
-          if (img) {
-            showModal(img.src, img.alt);
-          }
+      const tabs = document.querySelectorAll('.level-tab');
+      const contents = document.querySelectorAll('.level-tab-content');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.tab).classList.add('active');
         });
-      }
-      function showModal(src, alt) {
-        const modal = document.createElement('div');
-        modal.className = 'collage-modal';
-        modal.innerHTML = `<img src="${src}" alt="${alt}">`;
-        document.body.appendChild(modal);
-        // Animate in
-        setTimeout(() => modal.classList.add('show'), 10);
-        modal.onclick = () => {
-          modal.classList.remove('show');
-          setTimeout(() => document.body.removeChild(modal), 350);
-        };
-      }
+      });
+
+      // Carousel logic for each level
+      document.querySelectorAll('.carousel').forEach(function(carousel) {
+        const track = carousel.querySelector('.carousel-track');
+        const images = Array.from(track.querySelectorAll('img'));
+        let current = 0;
+        let interval = null;
+
+        // Set all images to absolute and hide except the first
+        images.forEach((img, i) => {
+          img.style.position = 'absolute';
+          img.style.top = 0;
+          img.style.left = 0;
+          img.style.width = '100%';
+          img.style.height = '100%';
+          img.style.objectFit = 'cover';
+          img.style.opacity = i === 0 ? '1' : '0';
+          img.style.transition = 'opacity 0.7s cubic-bezier(.76,0,.24,1)';
+          img.classList.toggle('active', i === 0);
+        });
+
+        function showImage(idx) {
+          images.forEach((img, i) => {
+            img.classList.toggle('active', i === idx);
+            img.style.opacity = i === idx ? '1' : '0';
+          });
+          current = idx;
+        }
+
+        function nextImage() {
+          showImage((current + 1) % images.length);
+        }
+        function resetInterval() {
+          if (interval) clearInterval(interval);
+          interval = setInterval(nextImage, 3500);
+        }
+        showImage(0);
+        resetInterval();
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => interval && clearInterval(interval));
+        carousel.addEventListener('mouseleave', resetInterval);
+      });
     });
   </script>
 </body>

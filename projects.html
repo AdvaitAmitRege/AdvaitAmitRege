@@ -53,9 +53,19 @@
                 <h2 class="section-title">ALL PROJECTS</h2>
                 <div class="section-line"></div>
             </div>
+            <!-- Category Selector: Unique Initializing Style -->
+            <div class="category-selector-init">
+                <div class="init-title"><span class="init-dot"></span> Initializing Project Categories...</div>
+                <div class="category-options">
+                    <button class="category-btn active" data-category="all">ALL</button>
+                    <button class="category-btn" data-category="mechanics">Mechanics</button>
+                    <button class="category-btn" data-category="solo">Solo Projects</button>
+                    <button class="category-btn" data-category="level">Level Designs</button>
+                </div>
+            </div>
             <div class="projects-content">
                 <div class="project-grid">
-                    <div class="project-card">
+                    <div class="project-card" data-category="solo level">
                         <div class="project-image">
                             <img src="assets/images/TheFleshboundCurse/TFC_1.jpg" alt="The Fleshbound Curse">
                             <div class="project-overlay">
@@ -65,9 +75,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-category="mechanics level">
                         <div class="project-image">
-                            <img src="assets/images/icons/programming-category.jpg" alt="Railway Simulator">
+                            <img src="assets/images/TrainSim/TS_1.jpg" alt="Railway Simulator">
                             <div class="project-overlay">
                                 <h3>Railway Simulator</h3>
                                 <p>A realistic train simulation game</p>
@@ -75,9 +85,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-category="mechanics solo">
                         <div class="project-image">
-                            <img src="assets/images/icons/game-category.jpg" alt="FPS Shooter">
+                            <img src="assets/images/FPS/FPS_1.jpg" alt="FPS Shooter">
                             <div class="project-overlay">
                                 <h3>FPS Shooter</h3>
                                 <p>A fast-paced first-person shooter game</p>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Railway Simulator</title>
   <link rel="stylesheet" href="css/Projects_style.css">
+  <link rel="stylesheet" href="../css/new-style.css">
 </head>
 <body>
   <header class="header" style="background:rgba(30,30,60,0.7);backdrop-filter:blur(8px);padding:1.2rem 0 1.2rem 0;box-shadow:0 2px 16px 0 rgba(120,80,255,0.08);border-bottom:1.5px solid rgba(160,132,238,0.10);">
@@ -15,64 +16,230 @@
     </div>
   </header>
   <div class="project-banner">
-  <img src="../assets/images/icons/programming-category.jpg" alt="Railway Simulator Banner">
-  <div class="banner-title">Railway Simulator</div>
+  <img src="../assets/images/TrainSim/TS_1.jpg" alt="Railway Simulator Banner">
+    <div class="banner-title enhanced">Railway Simulator</div>
   </div>
   <main class="project-main-content">
     <div class="info-cards">
       <div class="info-card">
-  <h3>About</h3>
-  <div>Railway Simulator is a realistic train simulation game. Manage your own railway network, drive trains, and optimize schedules. Built with Unity and C#.</div>
+        <h3>About</h3>
+        <div>Railway Simulator(Psudo name) is a realistic train simulation game. Manage your own railway network, drive trains, and optimize schedules. Built with Unity and C#.</div>
       </div>
       <div class="info-card">
         <h3>Project Info</h3>
         <ul class="info-list">
-          <li><span class="icon">👤</span>Role: Simulation Developer</li>
-          <li><span class="icon">🕹️</span>Genre: Train Simulation</li>
-          <li><span class="icon">🛠️</span>Engine: Unity (C#)</li>
-          <li><span class="icon">⏱️</span>Time frame: 6 Months</li>
+          <li><span class="icon">👤</span>Role: Level Designer</li>
+          <li><span class="icon">🕹️</span>Genre: Simulation</li>
+          <li><span class="icon">🛠️</span>Engine: Unreal Engine 5</li>
+          <li><span class="icon">⏱️</span>Time frame: 3 Months (On-going)</li>
         </ul>
       </div>
     </div>
 
-    <h2 class="section-title">Introduction</h2>
-    <div style="margin-bottom:2.2rem;line-height:1.7;">
-      Railway Simulator puts you in control of a complex railway system. Experience the thrill of driving trains, managing routes, and solving logistical challenges in a dynamic environment.
+    <!-- Level Tabs -->
+    <div class="level-tabs-container">
+      <div class="level-tabs">
+  <button class="level-tab active" data-tab="level1">Level 1</button>
+  <button class="level-tab" data-tab="level2">Level 2</button>
+      </div>
+      <div class="level-tab-content active" id="level1">
+        <h3>Level 1: Snow Mountain region</h3>
+        <p>Drive a variety of trains, each with unique controls and handling. Master the art of smooth stops, starts, and speed management.</p>
+        <!-- First Carousel: TS_2 to TS_5 -->
+        <div class="carousel" data-carousel="level1-carousel1">
+          <div class="carousel-track">
+            <img src="../assets/images/TrainSim/TS_2.jpg" alt="Level 1 Image 1">
+            <img src="../assets/images/TrainSim/TS_3.jpg" alt="Level 1 Image 2">
+            <img src="../assets/images/TrainSim/TS_4.jpg" alt="Level 1 Image 3">
+            <img src="../assets/images/TrainSim/TS_5.jpg" alt="Level 1 Image 4">
+          </div>
+        </div>
+        <section class="level-horizontal-details">
+          <div class="h-detail vision">
+            <div class="h-detail-bar vision"></div>
+            <div class="h-detail-icon">🌟</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Vision</div>
+              <div class="h-detail-desc">Deliver a realistic and engaging train driving experience, focusing on authentic controls and immersive environments.</div>
+            </div>
+          </div>
+        </section>
+        <!-- Second Carousel: TS_5 to TS_9 (moved between Vision and Key Challenges) -->
+        <div class="carousel" data-carousel="level1-carousel2">
+          <div class="carousel-track">
+            <img src="../assets/images/TrainSim/TS_5.jpg" alt="Level 1 Image 5">
+            <img src="../assets/images/TrainSim/TS_6.jpg" alt="Level 1 Image 6">
+            <img src="../assets/images/TrainSim/TS_7.jpg" alt="Level 1 Image 7">
+            <img src="../assets/images/TrainSim/TS_8.jpg" alt="Level 1 Image 8">
+            <img src="../assets/images/TrainSim/TS_9.jpg" alt="Level 1 Image 9">
+          </div>
+        </div>
+        <section class="level-horizontal-details">
+          <div class="h-detail challenges">
+            <div class="h-detail-bar challenges"></div>
+            <div class="h-detail-icon">⚠️</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Key Challenges</div>
+              <ul class="h-detail-list">
+                <li><strong>Physics:</strong> Simulating realistic train movement and braking</li>
+                <li><strong>Controls:</strong> Making complex controls accessible to all players</li>
+              </ul>
+            </div>
+          </div>
+          <div class="h-detail fixes">
+            <div class="h-detail-bar fixes"></div>
+            <div class="h-detail-icon">�️</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Fixes & Improvements</div>
+              <ul class="h-detail-list">
+                <li>Refined acceleration and braking curves</li>
+                <li>Added tutorial overlays for new players</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- Single Image: TS_10 -->
+        <div class="media-grid" style="margin-top:2.5rem;">
+          <div class="media-item">
+      <img src="../assets/images/TrainSim/TS_8.jpg" alt="Level 1 Image 10">
+          </div>
+        </div>
+      </div>
+      <div class="level-tab-content" id="level2">
+        <h3>Level 2: Network Management</h3>
+        <p>Plan and optimize train schedules, avoid collisions, and keep your network running efficiently under changing conditions.</p>
+        <!-- First Carousel: TS_2 to TS_5 -->
+        <div class="carousel" data-carousel="level2-carousel1">
+          <div class="carousel-track">
+            <img src="../assets/images/TrainSim/TS_2.jpg" alt="Level 2 Image 1">
+            <img src="../assets/images/TrainSim/TS_3.jpg" alt="Level 2 Image 2">
+            <img src="../assets/images/TrainSim/TS_4.jpg" alt="Level 2 Image 3">
+            <img src="../assets/images/TrainSim/TS_5.jpg" alt="Level 2 Image 4">
+          </div>
+        </div>
+        <section class="level-horizontal-details">
+          <div class="h-detail vision">
+            <div class="h-detail-bar vision"></div>
+            <div class="h-detail-icon">🌟</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Vision</div>
+              <div class="h-detail-desc">Create a dynamic, living railway network where players must think strategically to avoid delays and maximize efficiency.</div>
+            </div>
+          </div>
+        </section>
+        <!-- Second Carousel: TS_5 to TS_9 (moved between Vision and Key Challenges) -->
+        <div class="carousel" data-carousel="level2-carousel2">
+          <div class="carousel-track">
+            <img src="../assets/images/TrainSim/TS_5.jpg" alt="Level 2 Image 5">
+            <img src="../assets/images/TrainSim/TS_6.jpg" alt="Level 2 Image 6">
+            <img src="../assets/images/TrainSim/TS_7.jpg" alt="Level 2 Image 7">
+            <img src="../assets/images/TrainSim/TS_8.jpg" alt="Level 2 Image 8">
+            <img src="../assets/images/TrainSim/TS_9.jpg" alt="Level 2 Image 9">
+          </div>
+        </div>
+        <section class="level-horizontal-details">
+          <div class="h-detail challenges">
+            <div class="h-detail-bar challenges"></div>
+            <div class="h-detail-icon">⚠️</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Key Challenges</div>
+              <ul class="h-detail-list">
+                <li><strong>Scheduling:</strong> Balancing multiple trains and routes</li>
+                <li><strong>AI:</strong> Programming smart, adaptive train AI</li>
+              </ul>
+            </div>
+          </div>
+          <div class="h-detail fixes">
+            <div class="h-detail-bar fixes"></div>
+            <div class="h-detail-icon">🛠️</div>
+            <div class="h-detail-content">
+              <div class="h-detail-title">Fixes & Improvements</div>
+              <ul class="h-detail-list">
+                <li>Improved pathfinding and collision avoidance</li>
+                <li>Added visual schedule editor</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- Second Carousel: TS_5 to TS_9 -->
+        <div class="carousel" data-carousel="level2-carousel2">
+          <div class="carousel-track">
+      <img src="../assets/images/TrainSim/TS_5.jpg" alt="Level 2 Image 5">
+      <img src="../assets/images/TrainSim/TS_6.jpg" alt="Level 2 Image 6">
+      <img src="../assets/images/TrainSim/TS_7.jpg" alt="Level 2 Image 7">
+      <img src="../assets/images/TrainSim/TS_8.jpg" alt="Level 2 Image 8">
+      <img src="../assets/images/TrainSim/TS_9.jpg" alt="Level 2 Image 9">
+          </div>
+        </div>
+        <!-- Single Image: TS_10 -->
+        <div class="media-grid" style="margin-top:2.5rem;">
+          <div class="media-item">
+      <img src="../assets/images/TrainSim/TS_10.jpg" alt="Level 2 Image 10">
+          </div>
+        </div>
+      </div>
+      <!-- Removed Level 3 tab and content -->
     </div>
-
-    <h2 class="section-title">Features & Highlights</h2>
-    <ul class="info-list" style="margin-bottom:2.2rem;">
-      <li><span class="icon">🚂</span>Realistic train driving physics</li>
-      <li><span class="icon">�️</span>Expansive railway network to manage</li>
-      <li><span class="icon">⏰</span>Dynamic weather and day-night cycle</li>
-      <li><span class="icon">🛤️</span>Customizable routes and schedules</li>
-    </ul>
-
-    <section style="margin:3.5rem 0 2.5rem 0;display:flex;align-items:center;gap:3vw;flex-wrap:wrap;">
-  <img src="../assets/images/icons/programming-category.jpg" alt="Railway Simulator Banner" style="flex:1 1 340px;min-width:260px;max-width:480px;width:38vw;height:260px;object-fit:cover;display:block;border-radius:0;">
-      <div style="flex:2 1 340px;min-width:220px;">
-        <h3 style="margin-top:0;color:#a084ee;font-family:'Orbitron',sans-serif;font-size:1.2rem;">Immersive Train Operations</h3>
-        <p style="line-height:1.7;">Drive a variety of trains, each with unique controls and handling. Master the art of smooth stops, starts, and speed management.</p>
-      </div>
-    </section>
-
-    <section style="margin:3.5rem 0 2.5rem 0;display:flex;align-items:center;gap:3vw;flex-wrap:wrap;flex-direction:row-reverse;">
-  <img src="../assets/images/icons/programming-category.jpg" alt="Railway Simulator Banner" style="flex:1 1 340px;min-width:260px;max-width:480px;width:38vw;height:260px;object-fit:cover;display:block;border-radius:0;">
-      <div style="flex:2 1 340px;min-width:220px;">
-        <h3 style="margin-top:0;color:#a084ee;font-family:'Orbitron',sans-serif;font-size:1.2rem;">Network Management</h3>
-        <p style="line-height:1.7;">Plan and optimize train schedules, avoid collisions, and keep your network running efficiently under changing conditions.</p>
-      </div>
-    </section>
-
-    <section style="margin:3.5rem 0 2.5rem 0;display:flex;align-items:center;gap:3vw;flex-wrap:wrap;">
-  <img src="../assets/images/icons/programming-category.jpg" alt="Railway Simulator Banner" style="flex:1 1 340px;min-width:260px;max-width:480px;width:38vw;height:260px;object-fit:cover;display:block;border-radius:0;">
-      <div style="flex:2 1 340px;min-width:220px;">
-        <h3 style="margin-top:0;color:#a084ee;font-family:'Orbitron',sans-serif;font-size:1.2rem;">Detailed Environments</h3>
-        <p style="line-height:1.7;">Enjoy realistic scenery, weather effects, and a living world as you expand and upgrade your railway empire.</p>
-      </div>
-    </section>
 
   </main>
   <script src="../js/new-interactive.js"></script>
+  <script>
+    // Simple tab logic for level tabs
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.level-tab');
+      const contents = document.querySelectorAll('.level-tab-content');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+      });
+
+      // Carousel logic for each level
+      document.querySelectorAll('.carousel').forEach(function(carousel) {
+        const track = carousel.querySelector('.carousel-track');
+        const images = Array.from(track.querySelectorAll('img'));
+        let current = 0;
+        let interval = null;
+
+        // Set all images to absolute and hide except the first
+        images.forEach((img, i) => {
+          img.style.position = 'absolute';
+          img.style.top = 0;
+          img.style.left = 0;
+          img.style.width = '100%';
+          img.style.height = '100%';
+          img.style.objectFit = 'cover';
+          img.style.opacity = i === 0 ? '1' : '0';
+          img.style.transition = 'opacity 0.7s cubic-bezier(.76,0,.24,1)';
+          img.classList.toggle('active', i === 0);
+        });
+
+        function showImage(idx) {
+          images.forEach((img, i) => {
+            img.classList.toggle('active', i === idx);
+            img.style.opacity = i === idx ? '1' : '0';
+          });
+          current = idx;
+        }
+
+        function nextImage() {
+          showImage((current + 1) % images.length);
+        }
+        function resetInterval() {
+          if (interval) clearInterval(interval);
+          interval = setInterval(nextImage, 3500);
+        }
+        showImage(0);
+        resetInterval();
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => interval && clearInterval(interval));
+        carousel.addEventListener('mouseleave', resetInterval);
+      });
+    });
+  </script>
 </body>
 </html>

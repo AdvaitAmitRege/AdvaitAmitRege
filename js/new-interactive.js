@@ -9,6 +9,63 @@ document.addEventListener('DOMContentLoaded', function() {
     initSkillBars();
     initStatsCounter();
     initProjectHover();
+    initCategorySelector();
+    initProjectCardAssembly();
+// Project Card Assembly Animation (staggered)
+function initProjectCardAssembly() {
+    const cards = document.querySelectorAll('.project-card');
+    if (!cards.length) return;
+    cards.forEach((card, i) => {
+        card.classList.add(i % 2 === 0 ? 'slide-in-left' : 'slide-in-right');
+    });
+    // IntersectionObserver for fade+slide-in
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('scrolled-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    cards.forEach(card => observer.observe(card));
+}
+// Category Selector Filtering (Projects Page Only)
+function initCategorySelector() {
+    const selector = document.querySelector('.category-selector-init');
+    if (!selector) return;
+    const buttons = selector.querySelectorAll('.category-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (btn.classList.contains('active')) return;
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cat = btn.getAttribute('data-category');
+            // Simulate system initializing delay
+            cards.forEach(card => {
+                card.style.opacity = '0.3';
+                card.style.pointerEvents = 'none';
+            });
+            setTimeout(() => {
+                cards.forEach(card => {
+                    if (cat === 'all' || card.getAttribute('data-category').includes(cat)) {
+                        card.style.display = '';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.pointerEvents = '';
+                        }, 80);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 180);
+                    }
+                });
+            }, 320); // Delay for 'initializing' effect
+        });
+    });
+}
 });
 
 // Custom Cursor
