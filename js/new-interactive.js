@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initProjectHover();
     initCategorySelector();
     initProjectCardAssembly();
+    initProjectAccordions();
+});
 // Project Card Assembly Animation (staggered)
 function initProjectCardAssembly() {
     const cards = document.querySelectorAll('.project-card');
@@ -28,6 +30,176 @@ function initProjectCardAssembly() {
         });
     }, { threshold: 0.3 });
     cards.forEach(card => observer.observe(card));
+}
+
+// Collapsible sections for project pages
+function initProjectAccordions() {
+    const projectPage = document.querySelector('.project-main-content');
+    if (!projectPage) return;
+
+    if (document.querySelector('.project-accordion')) {
+        updateProjectStatusColors();
+        renameWrongFloorQuickInfo();
+        return;
+    }
+
+    const infoCardsContainer = projectPage.querySelector('.info-cards');
+    if (!infoCardsContainer) return;
+
+    const sourceCards = Array.from(infoCardsContainer.querySelectorAll('.info-card'));
+    const statusText = findProjectValue(sourceCards, projectPage, ['status', 'release', 'ongoing', 'upcoming']) || 'Completed';
+    const typeText = findProjectValue(sourceCards, projectPage, ['type', 'genre']) || 'Project';
+    const engineText = findProjectValue(sourceCards, projectPage, ['engine']) || 'Unreal Engine 5';
+
+    const summaryCards = document.createElement('div');
+    summaryCards.className = 'info-cards project-summary-cards';
+    summaryCards.appendChild(createSummaryCard('Status', statusText, getStatusTone(statusText)));
+    summaryCards.appendChild(createSummaryCard('Type', typeText));
+    summaryCards.appendChild(createSummaryCard('Engine', engineText));
+
+    projectPage.insertBefore(summaryCards, infoCardsContainer);
+
+    const accordionAnchors = [];
+
+    const detailSections = Array.from(projectPage.querySelectorAll(':scope > .level-horizontal-details'));
+
+    detailSections.forEach((section) => {
+        if (section.closest('.project-accordion')) return;
+        const accordion = convertDetailSectionToAccordion(section);
+        if (accordion) {
+            accordionAnchors.push(accordion);
+        }
+    });
+
+    const insertBeforeNode = infoCardsContainer.nextElementSibling;
+    accordionAnchors.forEach((accordion) => {
+        projectPage.insertBefore(accordion, insertBeforeNode);
+    });
+
+    infoCardsContainer.remove();
+    updateProjectStatusColors();
+    renameWrongFloorQuickInfo();
+}
+
+function createSummaryCard(title, value, tone) {
+    const card = document.createElement('div');
+    card.className = `info-card${tone ? ` status-${tone}` : ''}`;
+
+    const heading = document.createElement('h3');
+    heading.textContent = title;
+
+    const body = document.createElement('div');
+    body.className = 'info-value';
+    body.textContent = value;
+
+    card.appendChild(heading);
+    card.appendChild(body);
+    return card;
+}
+
+function findProjectValue(cards, projectPage, keys) {
+        const searchScope = `${projectPage.textContent} ${cards.map(card => card.textContent).join(' ')}`;
+        const lowerScope = searchScope.toLowerCase();
+
+        for (const card of cards) {
+                const cardText = card.textContent;
+                const lowerCard = cardText.toLowerCase();
+                for (const key of keys) {
+                        const index = lowerCard.indexOf(`${key}:`);
+                        if (index !== -1) {
+                                return cardText.slice(index + key.length + 1).replace(/\s+/g, ' ').trim();
+                        }
+                }
+        }
+
+        const regexes = keys.map((key) => new RegExp(`${key}\\s*:\\s*([^\\n\\r]+)`, 'i'));
+        for (const regex of regexes) {
+                const match = searchScope.match(regex);
+                if (match) {
+                        return match[1].replace(/\s+/g, ' ').trim();
+                }
+        }
+
+        const statusMatches = lowerScope.match(/(completed|ongoing|upcoming|released|prototype|in progress)/i);
+        if (keys.includes('status') && statusMatches) {
+                return statusMatches[1].replace(/\b\w/g, ch => ch.toUpperCase());
+        }
+
+        return '';
+}
+
+function getStatusTone(statusText) {
+    const normalized = statusText.toLowerCase();
+    if (normalized.includes('ongoing') || normalized.includes('upcoming') || normalized.includes('in progress')) {
+        return 'ongoing';
+    }
+    return 'completed';
+}
+
+function createAccordionFromNode(title, contentNode, openByDefault = false) {
+    if (!contentNode) return null;
+
+    const accordion = document.createElement('details');
+    accordion.className = 'project-accordion';
+    if (openByDefault) {
+        accordion.open = true;
+    }
+
+    const summary = document.createElement('summary');
+    summary.textContent = title;
+
+    const body = document.createElement('div');
+    body.className = 'project-accordion-body';
+    body.appendChild(contentNode);
+
+    accordion.appendChild(summary);
+    accordion.appendChild(body);
+    return accordion;
+}
+
+function convertSectionCardToAccordion(card) {
+    const titleElement = card.querySelector('h3');
+    if (!titleElement) return null;
+
+    const title = titleElement.textContent.trim();
+    const content = document.createElement('div');
+    content.innerHTML = card.innerHTML;
+    content.querySelector('h3')?.remove();
+
+    return createAccordionFromNode(title, content, ['about', 'project info'].includes(title.toLowerCase()));
+}
+
+function convertDetailSectionToAccordion(section) {
+    const firstDetail = section.querySelector('.h-detail');
+    if (!firstDetail) return null;
+
+    const titleElement = firstDetail.querySelector('.h-detail-title');
+    if (!titleElement) return null;
+
+    const title = titleElement.textContent.trim();
+    return createAccordionFromNode(
+        title,
+        section,
+        ['about', 'project info', 'screenshots'].includes(title.toLowerCase())
+    );
+}
+
+function updateProjectStatusColors() {
+    document.querySelectorAll('.project-summary-cards .info-card').forEach((card) => {
+        const heading = card.querySelector('h3');
+        if (!heading || heading.textContent.trim().toLowerCase() !== 'status') return;
+        const value = card.querySelector('.info-value')?.textContent || '';
+        card.classList.remove('status-completed', 'status-ongoing');
+        card.classList.add(`status-${getStatusTone(value)}`);
+    });
+}
+
+function renameWrongFloorQuickInfo() {
+    document.querySelectorAll('.project-accordion summary').forEach((summary) => {
+        if (summary.textContent.trim().toLowerCase() === 'quick info') {
+            summary.textContent = 'Project Info';
+        }
+    });
 }
 // Category Selector Filtering (Projects Page Only)
 function initCategorySelector() {
@@ -66,7 +238,6 @@ function initCategorySelector() {
         });
     });
 }
-});
 
 // Custom Cursor
 function initCursor() {
