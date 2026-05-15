@@ -555,6 +555,18 @@ body {
   object-fit: cover;
   filter: brightness(0.85) saturate(1.1);
 }
+
+.lab-banner {
+  margin-top: 70px;
+  max-height: 530px;
+}
+
+.project-banner.lab-banner img,
+.project-banner.lab-banner video {
+  max-height: 530px;
+  height: 530px;
+  object-position: center center;
+}
 .banner-title {
   position: absolute;
   left: 2.5rem;
@@ -668,6 +680,16 @@ body {
   .info-cards { flex-direction: column; gap: 1.5rem; }
   .project-banner img, .project-banner video { max-height: 180px; }
   .banner-title { font-size: 2rem; left: 1.2rem; bottom: 1.2rem; }
+
+  .project-banner.lab-banner {
+    max-height: 260px;
+  }
+
+  .project-banner.lab-banner img,
+  .project-banner.lab-banner video {
+    max-height: 260px;
+    height: 260px;
+  }
 }
 @media (max-width: 600px) {
   .project-main-content { padding: 1rem 0.2rem; }

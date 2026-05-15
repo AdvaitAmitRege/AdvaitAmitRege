@@ -20,7 +20,7 @@
   </header>
 
   <div class="project-banner">
-    <img src="../assets/images/TheWrongFloor/WF_1.jpg" alt="The Wrong Floor Banner">
+    <img src="../assets/images/TheWrongFloor/TWF_1.png" alt="The Wrong Floor Banner">
     <div class="banner-title enhanced">The Wrong Floor</div>
   </div>
 
@@ -102,6 +102,14 @@
                 <li>UI & Interaction</li>
                 <li>Environmental Details</li>
               </ul>
+              <div class="carousel" data-carousel="twf-screenshots">
+                <div class="carousel-track">
+                  <img src="../assets/images/TheWrongFloor/TWF_2.png" alt="The Wrong Floor Screenshot 1">
+                  <img src="../assets/images/TheWrongFloor/TWF_3.png" alt="The Wrong Floor Screenshot 2">
+                  <img src="../assets/images/TheWrongFloor/TWF_4.png" alt="The Wrong Floor Screenshot 3">
+                  <img src="../assets/images/TheWrongFloor/TWF_5.png" alt="The Wrong Floor Screenshot 4">
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -219,5 +227,57 @@
       </div>
     </details>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.carousel').forEach(function(carousel) {
+        const track = carousel.querySelector('.carousel-track');
+        if (!track) return;
+
+        const images = Array.from(track.querySelectorAll('img'));
+        if (!images.length) return;
+
+        let current = 0;
+        let interval = null;
+
+        images.forEach((img, index) => {
+          img.style.position = 'absolute';
+          img.style.top = '0';
+          img.style.left = '0';
+          img.style.width = '100%';
+          img.style.height = '100%';
+          img.style.objectFit = 'cover';
+          img.style.opacity = index === 0 ? '1' : '0';
+          img.style.transition = 'opacity 0.7s cubic-bezier(.76,0,.24,1)';
+          img.classList.toggle('active', index === 0);
+        });
+
+        function showImage(index) {
+          images.forEach((img, i) => {
+            const isActive = i === index;
+            img.classList.toggle('active', isActive);
+            img.style.opacity = isActive ? '1' : '0';
+          });
+          current = index;
+        }
+
+        function nextImage() {
+          showImage((current + 1) % images.length);
+        }
+
+        function resetInterval() {
+          if (interval) clearInterval(interval);
+          interval = setInterval(nextImage, 3500);
+        }
+
+        showImage(0);
+        resetInterval();
+
+        carousel.addEventListener('mouseenter', () => {
+          if (interval) clearInterval(interval);
+        });
+        carousel.addEventListener('mouseleave', resetInterval);
+      });
+    });
+  </script>
 </body>
 </html>
